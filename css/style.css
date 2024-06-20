@@ -1,0 +1,75 @@
+.finalizada {
+    text-decoration: line-through;
+}
+
+.formAddTask {
+    border: 1px solid rgb(83, 81, 81);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+body {
+    background-color: rgba(1, 7, 42, 0.907);
+}
+
+* {
+    color: #fffafa;
+}
+
+/* Estilos para el formulario */
+.formulario {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: 2px solid #ffffffcc;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.formLogin {
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 50%;
+    margin-bottom: 5%;
+    border: 2px solid #faf2f2cc;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Estilos para la leyenda */
+legend {
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas */
+label {
+    font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="double"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón de enviar */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Estilos para el botón de enviar al pasar el mouse */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    
+}
+
