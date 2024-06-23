@@ -35,3 +35,28 @@ CREATE TABLE `ropa` (
   `talle` int(11) NOT NULL,
   `id_tienda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO ropa (id_ropa, tipo, descripcion, precio, talle, id_tienda) VALUES
+(1, 'remera', 'roja', 250.00, 2, 1),
+(2, 'jean', 'negro', 900.00, 3, 1),
+(3, 'buzo', 'azul', 500.00, 2, 1),
+(4, 'jogging', 'gris', 750.00, 3, 2),
+(5, 'suéter', 'negro', 300.00, 1, 2),
+(6, 'jean', 'celeste', 900.00, 1, 2),
+(7, 'remera', 'rosa', 250.00, 3, 3),
+(8, 'campera', 'marrón', 600.00, 2, 3),
+(11, 'polera', 'bordó', 400.00, 3, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla tienda
+--
+
+CREATE TABLE tienda (
+  id_tienda int(11) NOT NULL,
+  nombre varchar(100) NOT NULL,
+  direccion varchar(100) NOT NULL,
+  telefono int(11) NOT NULL,
+  email varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
