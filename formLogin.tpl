@@ -11,11 +11,6 @@
     <label class="form-label">Contraseña</label>
     <input type="password" name="password" class="form-control" placeholder="Ingrese contraseña">
 
-    {if $msj}
-      <div class='alert alert-warning'>
-        {$msj}
-      </div>
-    {/if}
 
     <button type="submit" class="btn btn-primary col-12">Ingresar</button>
   </form>
