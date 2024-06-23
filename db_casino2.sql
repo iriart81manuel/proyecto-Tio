@@ -60,3 +60,77 @@ CREATE TABLE tienda (
   telefono int(11) NOT NULL,
   email varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--
+-- Volcado de datos para la tabla tienda
+--
+
+INSERT INTO tienda (id_tienda, nombre, direccion, telefono, email) VALUES
+(1, 'Urban clothing BA', 'Montevideo 181', 11617287, 'urbanclothingba@gmail.com'),
+(2, 'Urban clothing Cba', 'Ameghino 110', 351569877, 'urbanclothingcba@gmail.com'),
+(3, 'Urban clothing SF', 'Alvear 678', 342413982, 'urbanclothingsf@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla users
+--
+
+CREATE TABLE users (
+  id_user int(11) NOT NULL,
+  username varchar(100) NOT NULL,
+  password varchar(150) NOT NULL,
+  role varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla users
+--
+
+INSERT INTO users (id_user, username, password, role) VALUES
+(1, 'webadmin', '$2y$10$2/mZFGAPzleQi.qHtcxICe/xOQ8qFyjPfc1dfd1ahtR1JlI67buRW', 'admin'),
+(2, 'webuser', '$2y$10$vxKSdjhrr1zq2wEgCi6zD.BJxYJ1tZLeX/8JyknzXzrBBJz8s71Eu', 'default');
+
+
+ALTER TABLE ropa
+  ADD PRIMARY KEY (id_ropa),
+  ADD KEY FK_ROPA_TIENDA (id_tienda);
+
+
+-- Indices de la tabla tienda
+
+ALTER TABLE tienda
+  ADD PRIMARY KEY (id_tienda);
+
+--
+-- Indices de la tabla users
+--
+ALTER TABLE users
+  ADD PRIMARY KEY (id_user),
+  ADD UNIQUE KEY ak_username (username);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla ropa
+--
+ALTER TABLE ropa
+  MODIFY id_ropa int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla tienda
+--
+ALTER TABLE tienda
+  MODIFY id_tienda int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+-- AUTO_INCREMENT de la tabla users
+
+ALTER TABLE users
+  MODIFY id_user int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+-- Restricciones para tablas volcadas
+
+-- Filtros para la tabla ropa
+ALTER TABLE ropa
+  ADD CONSTRAINT FK_ROPA_TIENDA FOREIGN KEY (id_tienda) REFERENCES tienda (id_tienda);
+COMMIT;
